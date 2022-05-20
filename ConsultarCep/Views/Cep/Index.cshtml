@@ -1,0 +1,110 @@
+﻿@model ConsultarCep.Models.CepModel
+
+@{
+    ViewData["Title"] = "Consultar Cep";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    Se deseja consultar seu cep, informe-o abaixo:
+</p>
+
+
+@using (Html.BeginForm("Index", "Cep", method: FormMethod.Post))
+{
+    <div class="form-group">
+        <label for="cep">
+            <span>Cep</span>
+            <input type="text" id="cep" name="cep">
+        </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Consultar Cep</button>
+}
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr class="success">
+            <th>
+                <label for="cep">
+                    <span>Cep</span>
+                </label>
+            </th>
+            <th>
+                <label for="Logradouro">
+                    <span>Logradouro</span>
+                </label>
+            </th>
+            <th>
+                <label for="Complemento">
+                    <span>Complemento</span>
+                </label>
+            </th>
+            <th>
+                <label for="Bairro">
+                    <span>Bairro</span>
+                </label>
+            </th>
+            <th>
+                <label for="localidade">
+                    <span>localidade</span>
+                </label>
+            </th>
+            <th>
+                <label for="Uf">
+                    <span>Uf</span>
+                </label>
+            </th>
+            <th>
+                <label for="Unidade">
+                    <span>Unidade</span>
+                </label>
+            </th>
+            <th>
+                <label for="Ibge">
+                    <span>Ibge</span>
+                </label>
+            </th>
+            <th>
+                <label for="Gia">
+                    <span>Gia</span>
+                </label>
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (Model != null)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Cep)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Logradouro)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Complemento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Bairro)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.localidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Uf)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Unidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Ibge)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Gia)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
